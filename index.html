@@ -55,7 +55,11 @@
     }
     .carousel-inner img {
       object-fit: cover;
-      height: 300px;
+      height: 225px;
+    }
+    .carousel-container {
+      max-width: 600px;
+      margin: 3rem auto;
     }
     .whatsapp-popup {
       position: fixed;
@@ -88,35 +92,41 @@
     <h1>Distribuidora Génesis</h1>
   </header>
 
-  <div id="carouselExampleIndicators" class="carousel slide container mt-5" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <div class="card product-card">
-          <img src="beton.jpeg" class="card-img-top" alt="Beton">
-          <div class="card-body">
-            <h5 class="card-title">Beton</h5>
-            <p class="card-text">Sellador base para pisos porosos.</p>
-            <a href="#beton" class="btn btn-dorado">Ver más</a>
+  <div class="text-center mt-5">
+    <h2 class="fw-bold">Nuestros productos</h2>
+  </div>
+
+  <div class="carousel-container">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="card product-card">
+            <img src="beton.jpeg" class="card-img-top" alt="Beton">
+            <div class="card-body">
+              <h5 class="card-title">Beton</h5>
+              <p class="card-text">Sellador base para pisos porosos.</p>
+              <a href="#beton" class="btn btn-dorado">Ver más</a>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="card product-card">
+            <img src="PB28CERA.jpeg" class="card-img-top" alt="PB28">
+            <div class="card-body">
+              <h5 class="card-title">PB28</h5>
+              <p class="card-text">Cera de alto brillo y protección duradera.</p>
+              <a href="#pb28" class="btn btn-dorado">Ver más</a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="carousel-item">
-        <div class="card product-card">
-          <img src="PB28CERA.jpeg" class="card-img-top" alt="PB28">
-          <div class="card-body">
-            <h5 class="card-title">PB28</h5>
-            <p class="card-text">Cera de alto brillo y protección duradera.</p>
-            <a href="#pb28" class="btn btn-dorado">Ver más</a>
-          </div>
-        </div>
-      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </button>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    </button>
   </div>
 
   <a class="whatsapp-popup" href="https://wa.me/5491133113773" target="_blank">

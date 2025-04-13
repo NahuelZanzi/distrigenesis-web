@@ -1,60 +1,23 @@
 <!DOCTYPE html>
-<html lang="es" style="scroll-behavior: smooth;">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Distribuidora Distrigenesis</title>
-  <meta name="description" content="Distribuidora Distrigenesis: selladores y ceras para pisos con envíos a CABA y retiro en Caballito.">
-  <meta name="keywords" content="sellador pisos, Beton, Beton Pro, PB28, Distrigenesis, CABA, Caballito">
-  <link rel="canonical" href="https://tudominio.github.io/" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta name="description" content="Distribuidora Distrigenesis - Productos para el sellado y cuidado de pisos. Envíos a CABA, retiro por Caballito. Consultá precios por WhatsApp." />
+  <meta name="keywords" content="sellador de pisos, beton, pb28, distribuidora, distrigenesis, cera, limpieza" />
+  <meta name="author" content="Distribuidora Distrigenesis" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <script src="https://kit.fontawesome.com/a2d9d5f083.js" crossorigin="anonymous"></script>
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f4f6f9;
-      color: #333;
-    }
-    header {
-      background-color: #002c5f;
-      padding: 1rem;
-      text-align: center;
-      color: white;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    header h1 { margin: 0; font-size: 2rem; }
-    .product-card {
-      border: none;
-      border-radius: 12px;
-      box-shadow: 0 0 12px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      text-align: center;
-      padding-top: 1rem;
-    }
-    .product-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-    }
-    .product-card img { width: 50%; height: auto; margin: 0 auto 1rem; }
+    body { font-family: 'Segoe UI', sans-serif; background-color: #f8f9fa; color: #333; scroll-behavior: smooth; }
+    header { background-color: #002c5f; padding: 1rem; text-align: center; color: white; }
+    .product-card img { height: 180px; object-fit: cover; }
+    .product-card { border: none; border-radius: 12px; transition: transform 0.3s ease; }
+    .product-card:hover { transform: scale(1.03); box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); }
     .btn-dorado { background-color: #c9a227; color: white; border: none; }
-    .btn-dorado:hover { background-color: #b8921f; }
-    .btn-whatsapp { background-color: #25D366; color: white; border: none; }
-    .btn-whatsapp:hover { background-color: #1DA851; }
-    footer {
-      background-color: #002c5f;
-      color: white;
-      text-align: center;
-      padding: 1.2rem;
-      margin-top: 4rem;
-    }
-    .detail-section { display: none; padding: 2rem 0; }
-    .detail-section.active { display: block; animation: fadeIn 0.5s ease-in-out; }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .back-btn { margin-bottom: 1rem; }
+    footer { background-color: #002c5f; color: white; text-align: center; padding: 1rem; margin-top: 3rem; }
+    .social-icons a { color: white; font-size: 1.5rem; margin: 0 10px; }
   </style>
 </head>
 <body>
@@ -62,100 +25,57 @@
     <h1>Distribuidora Distrigenesis</h1>
   </header>
 
-  <main id="main-view" class="container text-center my-5">
+  <section class="container text-center my-5">
     <h2 class="mb-4">Productos</h2>
-    <div class="row justify-content-center">
+    <div class="row">
       <div class="col-md-4 mb-4">
         <div class="card product-card">
-          <img src="beton.jpeg" alt="Beton">
-          <h5 class="card-title">Beton</h5>
-          <p class="card-text">Sellador base para pisos porosos.</p>
-          <button class="btn btn-dorado" data-target="beton">Ver más</button>
+          <img src="beton.jpeg" class="card-img-top" alt="Beton">
+          <div class="card-body">
+            <h5 class="card-title">Beton</h5>
+            <p class="card-text">Sellador base para pisos porosos.</p>
+            <a href="beton.html" class="btn btn-dorado">Ver más</a>
+          </div>
         </div>
       </div>
       <div class="col-md-4 mb-4">
         <div class="card product-card">
-          <img src="beton-etiqueta.jpg" alt="Beton Pro">
-          <h5 class="card-title">Beton Pro</h5>
-          <p class="card-text">Versión mejorada con mayor cobertura.</p>
-          <button class="btn btn-dorado" data-target="beton-pro">Ver más</button>
+          <img src="beton-etiqueta.jpg" class="card-img-top" alt="Beton Pro">
+          <div class="card-body">
+            <h5 class="card-title">Beton Pro</h5>
+            <p class="card-text">Versión mejorada con mayor cobertura.</p>
+            <a href="beton-pro.html" class="btn btn-dorado">Ver más</a>
+          </div>
         </div>
       </div>
       <div class="col-md-4 mb-4">
         <div class="card product-card">
-          <img src="PB28CERA.jpeg" alt="PB28">
-          <h5 class="card-title">PB28</h5>
-          <p class="card-text">Cera de alto brillo y protección duradera.</p>
-          <button class="btn btn-dorado" data-target="pb28">Ver más</button>
+          <img src="PB28CERA.jpeg" class="card-img-top" alt="PB28">
+          <div class="card-body">
+            <h5 class="card-title">PB28</h5>
+            <p class="card-text">Cera de alto brillo y protección.</p>
+            <a href="pb28.html" class="btn btn-dorado">Ver más</a>
+          </div>
         </div>
       </div>
     </div>
-  </main>
-
-  <section id="beton" class="detail-section container">
-    <button class="btn btn-secondary back-btn">← Volver</button>
-    <h2>Beton</h2>
-    <p>Sellador base para pisos porosos. Penetra la superficie y forma una barrera resistente.</p>
-    <a href="https://wa.me/54911XXXXXXXX?text=Hola%20quiero%20consultar%20precio%20de%20Beton" target="_blank" class="btn btn-whatsapp">Consultar Precio</a>
-  </section>
-  <section id="beton-pro" class="detail-section container">
-    <button class="btn btn-secondary back-btn">← Volver</button>
-    <h2>Beton Pro</h2>
-    <p>Versión premium con mayor concentración de resina. Más cobertura, más duración.</p>
-    <a href="https://wa.me/54911XXXXXXXX?text=Hola%20quiero%20consultar%20precio%20de%20Beton%20Pro" target="_blank" class="btn btn-whatsapp">Consultar Precio</a>
-  </section>
-  <section id="pb28" class="detail-section container">
-    <button class="btn btn-secondary back-btn">← Volver</button>
-    <h2>PB28</h2>
-    <p>Cera de alto brillo, protege y realza el piso. Fácil aplicación.</p>
-    <a href="https://wa.me/54911XXXXXXXX?text=Hola%20quiero%20consultar%20precio%20de%20PB28" target="_blank" class="btn btn-whatsapp">Consultar Precio</a>
-  </section>
-
-  <section id="contacto" class="container my-5">
-    <h2 class="text-center mb-4">Contacto</h2>
-    <form action="https://formspree.io/f/mzzeoken" method="POST" class="mx-auto" style="max-width:600px;">
-      <div class="mb-3">
-        <label for="name" class="form-label">Nombre</label>
-        <input type="text" name="name" id="name" class="form-control" placeholder="Tu nombre" required>
-      </div>
-      <div class="mb-3">
-        <label for="email" class="form-label">Email</label>
-        <input type="email" name="_replyto" id="email" class="form-control" placeholder="tu@correo.com" required>
-      </div>
-      <div class="mb-3">
-        <label for="message" class="form-label">Mensaje</label>
-        <textarea name="message" id="message" rows="4" class="form-control" placeholder="¿En qué podemos ayudarte?" required></textarea>
-      </div>
-      <button type="submit" class="btn btn-dorado w-100">Enviar mensaje</button>
-    </form>
   </section>
 
   <footer>
     <p>📦 Envíos a CABA llevando 4 bidones o más</p>
-    <p>📍 Retiro por Caballito zona Cid Campeador</p>
-    <p>🧾 Facturación C</p>
+    <p>📍 Retiro por Caballito - zona Cid Campeador</p>
+    <p>🧾 Solo Factura C</p>
+    <p>
+      <a href="https://wa.me/541133113773" class="btn btn-success my-2" target="_blank">
+        <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
+      </a>
+    </p>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/republicalimpieza/" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
     <p>&copy; 2025 Distribuidora Distrigenesis</p>
   </footer>
 
-  <script>
-    document.querySelectorAll('.btn-dorado').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const target = btn.getAttribute('data-target');
-        document.getElementById('main-view').style.display = 'none';
-        document.querySelectorAll('.detail-section').forEach(sec => sec.classList.remove('active'));
-        document.getElementById(target).classList.add('active');
-      });
-    });
-    document.querySelectorAll('.back-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.detail-section').forEach(sec => sec.classList.remove('active'));
-        document.getElementById('main-view').style.display = 'block';
-      });
-    });
-    window.addEventListener('DOMContentLoaded', () => {
-      document.getElementById('contacto').classList.add('active');
-    });
-  </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -9,70 +9,69 @@
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: #f4f6f9;
-      color: #333;
+      background-color: #f5f7fa;
+      color: #222;
     }
     header {
-      background-color: #002c5f;
-      padding: 1rem;
+      background-color: #003366;
+      padding: 0.7rem 1rem;
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 1rem;
+      gap: 0.8rem;
       color: white;
     }
     header h1 {
       margin: 0;
-      font-size: 1.8rem;
+      font-size: 1.5rem;
     }
-    .product-card {
-      border: none;
-      border-radius: 12px;
-      box-shadow: 0 0 12px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    .carousel-item img {
+      max-height: 350px;
+      object-fit: contain;
+      margin: 0 auto;
     }
-    .product-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    .product-carousel {
+      max-width: 900px;
+      margin: auto;
+    }
+    .carousel-caption {
+      background: rgba(0,0,0,0.6);
+      border-radius: 8px;
+      padding: 1rem;
     }
     .btn-dorado {
-      background-color: #c9a227;
+      background-color: #003366;
       color: white;
       border: none;
     }
     .btn-dorado:hover {
-      background-color: #b8921f;
+      background-color: #00509d;
     }
     footer {
-      background-color: #002c5f;
+      background-color: #003366;
       color: white;
       text-align: center;
-      padding: 1.2rem;
-      margin-top: 4rem;
+      padding: 1.5rem;
+      margin-top: 3rem;
     }
-    .detail-section {
-      display: none;
-      padding: 2rem 0;
+    .whatsapp-popup {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      padding: 12px 16px;
+      border-radius: 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      font-weight: 500;
+      z-index: 999;
     }
-    .detail-section.active {
-      display: block;
-      animation: fadeIn 0.5s ease-in-out;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .back-btn {
-      margin-bottom: 1rem;
-    }
-    /* Contact form */
-    .contact-form {
-      background: white;
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      margin: 2rem auto;
-      max-width: 600px;
+    .whatsapp-popup img {
+      width: 24px;
+      height: 24px;
     }
   </style>
 </head>
@@ -82,105 +81,38 @@
     <h1>Distribuidora Génesis</h1>
   </header>
 
-  <!-- Sección Principal -->
-  <main id="main-view" class="container text-center my-5">
-    <h2 class="mb-4">Productos</h2>
-    <div class="row justify-content-center">
-      <div class="col-md-4 mb-4">
-        <div class="card product-card">
-          <img src="beton.jpeg" class="card-img-top" alt="Beton">
-          <div class="card-body">
-            <h5 class="card-title">Beton</h5>
-            <p class="card-text">Sellador base para pisos porosos.</p>
-            <button class="btn btn-dorado" data-target="beton">Ver más</button>
+  <!-- Carrusel de productos -->
+  <section class="product-carousel mt-5">
+    <div id="carouselProducts" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active text-center">
+          <img src="beton.jpeg" class="d-block w-75" alt="Beton">
+          <div class="carousel-caption">
+            <h5>Beton</h5>
+            <p>Sellador base para pisos porosos.</p>
+            <a href="https://link.mercadopago.com.ar/distrigenesis" class="btn btn-dorado">Comprar ahora</a>
+          </div>
+        </div>
+        <div class="carousel-item text-center">
+          <img src="PB28CERA.jpeg" class="d-block w-75" alt="PB28">
+          <div class="carousel-caption">
+            <h5>PB28</h5>
+            <p>Cera de alto brillo y protección duradera.</p>
+            <a href="https://link.mercadopago.com.ar/distrigenesis" class="btn btn-dorado">Comprar ahora</a>
           </div>
         </div>
       </div>
-      <div class="col-md-4 mb-4">
-        <div class="card product-card">
-          <img src="beton-etiqueta.jpg" class="card-img-top" alt="Beton Pro">
-          <div class="card-body">
-            <h5 class="card-title">Beton Pro</h5>
-            <p class="card-text">Versión mejorada con mayor cobertura.</p>
-            <button class="btn btn-dorado" data-target="beton-pro">Ver más</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-4">
-        <div class="card product-card">
-          <img src="PB28CERA.jpeg" class="card-img-top" alt="PB28">
-          <div class="card-body">
-            <h5 class="card-title">PB28</h5>
-            <p class="card-text">Cera de alto brillo y protección duradera.</p>
-            <button class="btn btn-dorado" data-target="pb28">Ver más</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </main>
-
-  <!-- Sección Detalle: Beton -->
-  <section id="beton" class="detail-section container">
-    <button class="btn btn-secondary back-btn">← Volver</button>
-    <div class="row align-items-center">
-      <div class="col-md-6">
-        <img src="beton.jpeg" class="img-fluid rounded" alt="Beton">
-      </div>
-      <div class="col-md-6 text-start">
-        <h2>Beton</h2>
-        <p>Beton es un sellador base diseñado para pisos porosos. Penetra en la superficie y crea una barrera resistente al agua y a manchas, ideal para interiores y exteriores.</p>
-        <ul>
-          <li><strong>Formato:</strong> 5L y 10L</li>
-          <li><strong>Rendimiento:</strong> 8–10 m²/L</li>
-          <li><strong>Aplicación:</strong> Rodillo o pistola airless</li>
-        </ul>
-        <a href="https://link.mercadopago.com.ar/distrigenesis" class="btn btn-dorado mb-3">Comprar ahora</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Sección Detalle: Beton Pro -->
-  <section id="beton-pro" class="detail-section container">
-    <button class="btn btn-secondary back-btn">← Volver</button>
-    <div class="row align-items-center">
-      <div class="col-md-6 order-md-2">
-        <img src="beton-etiqueta.jpg" class="img-fluid rounded" alt="Beton Pro">
-      </div>
-      <div class="col-md-6 text-start order-md-1">
-        <h2>Beton Pro</h2>
-        <p>Beton Pro es la versión premium de Beton, con mayor concentración de resina para una cobertura más amplia y duradera. Perfecto para proyectos profesionales.</p>
-        <ul>
-          <li><strong>Formato:</strong> 5L, 10L y 20L</li>
-          <li><strong>Rendimiento:</strong> 12–14 m²/L</li>
-          <li><strong>Aplicación:</strong> Pistola airless recomendada</li>
-        </ul>
-        <a href="https://link.mercadopago.com.ar/distrigenesis" class="btn btn-dorado mb-3">Comprar ahora</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Sección Detalle: PB28 -->
-  <section id="pb28" class="detail-section container">
-    <button class="btn btn-secondary back-btn">← Volver</button>
-    <div class="row align-items-center">
-      <div class="col-md-6">
-        <img src="PB28CERA.jpeg" class="img-fluid rounded" alt="PB28">
-      </div>
-      <div class="col-md-6 text-start">
-        <h2>PB28</h2>
-        <p>PB28 es una cera de alto brillo que protege y realza el color natural del piso. Su fórmula crea una capa resistente a la abrasión y fácil de limpiar.</p>
-        <ul>
-          <li><strong>Formato:</strong> 1L y 5L</li>
-          <li><strong>Brillo:</strong> 90+ GU</li>
-          <li><strong>Aplicación:</strong> Mopa o pulidora con almohadilla suave</li>
-        </ul>
-        <a href="https://link.mercadopago.com.ar/distrigenesis" class="btn btn-dorado mb-3">Comprar ahora</a>
-      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselProducts" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselProducts" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
     </div>
   </section>
 
   <!-- Formulario de contacto -->
-  <section class="contact-form">
+  <section class="contact-form container my-5">
     <h3 class="text-center mb-4">Contáctanos</h3>
     <form action="https://formspree.io/f/mzzeoken" method="POST">
       <div class="mb-3">
@@ -199,39 +131,11 @@
     </form>
   </section>
 
-  <!-- WhatsApp Pop-up Flotante -->
-<style>
-  .whatsapp-popup {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #25d366;
-    color: white;
-    padding: 12px 16px;
-    border-radius: 30px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-    font-weight: 500;
-    z-index: 999;
-    transition: transform 0.3s ease;
-  }
-  .whatsapp-popup:hover {
-    transform: scale(1.05);
-  }
-  .whatsapp-popup img {
-    width: 24px;
-    height: 24px;
-  }
-</style>
-
-<a class="whatsapp-popup" href="https://wa.me/5491133113773" target="_blank">
-  <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" alt="WhatsApp">
-  Hace click para escribirnos al WhatsApp
-</a>
-
+  <!-- WhatsApp Popup -->
+  <a class="whatsapp-popup" href="https://wa.me/5491133113773" target="_blank">
+    <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" alt="WhatsApp">
+    Hace click para escribirnos al WhatsApp
+  </a>
 
   <footer>
     <p>📦 Envíos gratuitos en CABA para compras mayores a 4 bidones</p>
@@ -247,23 +151,6 @@
     <p>&copy; 2025 Distribuidora Génesis</p>
   </footer>
 
-  <script>
-    // Mostrar/ocultar secciones
-    document.querySelectorAll('.btn-dorado[data-target]').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const t = btn.getAttribute('data-target');
-        document.getElementById('main-view').style.display = 'none';
-        document.querySelectorAll('.detail-section').forEach(s => s.classList.remove('active'));
-        document.getElementById(t).classList.add('active');
-      });
-    });
-    document.querySelectorAll('.back-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.detail-section').forEach(s => s.classList.remove('active'));
-        document.getElementById('main-view').style.display = 'block';
-      });
-    });
-  </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

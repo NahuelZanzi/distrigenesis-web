@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>DistriGénesis</title>
+  <title>Distribuidora Distrigenesis</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
@@ -14,33 +14,29 @@
     header {
       background-color: #002c5f;
       padding: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
+      text-align: center;
       color: white;
     }
-    header img { height: 55px; }
-    .hero {
-      background: url('pisosellado1.jpeg') center/cover no-repeat;
-      height: 280px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
+    header h1 {
+      margin: 0;
       font-size: 2rem;
-      font-weight: bold;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
     }
     .product-card {
       border: none;
       border-radius: 12px;
       box-shadow: 0 0 12px rgba(0,0,0,0.05);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+      padding-top: 1rem;
     }
     .product-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    }
+    .product-card img {
+      width: 50%; /* Reducido a la mitad */
+      height: auto;
+      margin: 0 auto 1rem;
     }
     .btn-dorado {
       background-color: #c9a227;
@@ -50,6 +46,14 @@
     .btn-dorado:hover {
       background-color: #b8921f;
     }
+    .btn-whatsapp {
+      background-color: #25D366;
+      color: white;
+      border: none;
+    }
+    .btn-whatsapp:hover {
+      background-color: #1DA851;
+    }
     footer {
       background-color: #002c5f;
       color: white;
@@ -57,7 +61,6 @@
       padding: 1.2rem;
       margin-top: 4rem;
     }
-    /* Secciones de detalle ocultas por defecto */
     .detail-section {
       display: none;
       padding: 2rem 0;
@@ -78,56 +81,45 @@
 <body>
 
   <header>
-    <img src="logodistrigenesis.png" alt="Logo DistriGénesis">
-    <h1>DistriGénesis</h1>
+    <h1>Distribuidora Distrigenesis</h1>
   </header>
-
-  <section class="hero">
-    Productos para el cuidado de tus pisos
-  </section>
 
   <!-- Sección Principal -->
   <main id="main-view" class="container text-center my-5">
-    <h2 class="mb-4">Productos Destacados</h2>
+    <h2 class="mb-4">Productos</h2>
     <div class="row justify-content-center">
       <div class="col-md-4 mb-4">
         <div class="card product-card">
-          <img src="beton.jpeg" class="card-img-top" alt="Beton">
-          <div class="card-body">
-            <h5 class="card-title">Beton</h5>
-            <p class="card-text">Sellador base para pisos porosos.</p>
-            <button class="btn btn-dorado" data-target="beton">Ver más</button>
-          </div>
+          <img src="beton.jpeg" alt="Beton">
+          <h5 class="card-title">Beton</h5>
+          <p class="card-text">Sellador base para pisos porosos.</p>
+          <button class="btn btn-dorado" data-target="beton">Ver más</button>
         </div>
       </div>
       <div class="col-md-4 mb-4">
         <div class="card product-card">
-          <img src="beton-etiqueta.jpg" class="card-img-top" alt="Beton Pro">
-          <div class="card-body">
-            <h5 class="card-title">Beton Pro</h5>
-            <p class="card-text">Versión mejorada con mayor cobertura.</p>
-            <button class="btn btn-dorado" data-target="beton-pro">Ver más</button>
-          </div>
+          <img src="beton-etiqueta.jpg" alt="Beton Pro">
+          <h5 class="card-title">Beton Pro</h5>
+          <p class="card-text">Versión mejorada con mayor cobertura.</p>
+          <button class="btn btn-dorado" data-target="beton-pro">Ver más</button>
         </div>
       </div>
       <div class="col-md-4 mb-4">
         <div class="card product-card">
-          <img src="PB28CERA.jpeg" class="card-img-top" alt="PB28">
-          <div class="card-body">
-            <h5 class="card-title">PB28</h5>
-            <p class="card-text">Cera de alto brillo y protección duradera.</p>
-            <button class="btn btn-dorado" data-target="pb28">Ver más</button>
-          </div>
+          <img src="PB28CERA.jpeg" alt="PB28">
+          <h5 class="card-title">PB28</h5>
+          <p class="card-text">Cera de alto brillo y protección duradera.</p>
+          <button class="btn btn-dorado" data-target="pb28">Ver más</button>
         </div>
       </div>
     </div>
   </main>
 
-  <!-- Sección Detalle: Beton -->
+  <!-- Detalle Beton -->
   <section id="beton" class="detail-section container">
     <button class="btn btn-secondary back-btn">← Volver</button>
     <div class="row align-items-center">
-      <div class="col-md-6">
+      <div class="col-md-6 text-center">
         <img src="beton.jpeg" class="img-fluid rounded" alt="Beton">
       </div>
       <div class="col-md-6 text-start">
@@ -138,15 +130,16 @@
           <li><strong>Rendimiento:</strong> 8–10 m²/L</li>
           <li><strong>Aplicación:</strong> Rodillo o pistola airless</li>
         </ul>
+        <a href="https://wa.me/54911XXXXXXXX?text=Hola%20quiero%20consultar%20precio%20de%20Beton" target="_blank" class="btn btn-whatsapp">Consultar Precio</a>
       </div>
     </div>
   </section>
 
-  <!-- Sección Detalle: Beton Pro -->
+  <!-- Detalle Beton Pro -->
   <section id="beton-pro" class="detail-section container">
     <button class="btn btn-secondary back-btn">← Volver</button>
     <div class="row align-items-center">
-      <div class="col-md-6 order-md-2">
+      <div class="col-md-6 order-md-2 text-center">
         <img src="beton-etiqueta.jpg" class="img-fluid rounded" alt="Beton Pro">
       </div>
       <div class="col-md-6 text-start order-md-1">
@@ -157,15 +150,16 @@
           <li><strong>Rendimiento:</strong> 12–14 m²/L</li>
           <li><strong>Aplicación:</strong> Pistola airless recomendada</li>
         </ul>
+        <a href="https://wa.me/54911XXXXXXXX?text=Hola%20quiero%20consultar%20precio%20de%20Beton%20Pro" target="_blank" class="btn btn-whatsapp">Consultar Precio</a>
       </div>
     </div>
   </section>
 
-  <!-- Sección Detalle: PB28 -->
+  <!-- Detalle PB28 -->
   <section id="pb28" class="detail-section container">
     <button class="btn btn-secondary back-btn">← Volver</button>
     <div class="row align-items-center">
-      <div class="col-md-6">
+      <div class="col-md-6 text-center">
         <img src="PB28CERA.jpeg" class="img-fluid rounded" alt="PB28">
       </div>
       <div class="col-md-6 text-start">
@@ -176,18 +170,20 @@
           <li><strong>Brillo:</strong> 90+ GU</li>
           <li><strong>Aplicación:</strong> Mopa o pulidora con almohadilla suave</li>
         </ul>
+        <a href="https://wa.me/54911XXXXXXXX?text=Hola%20quiero%20consultar%20precio%20de%20PB28" target="_blank" class="btn btn-whatsapp">Consultar Precio</a>
       </div>
     </div>
   </section>
 
   <footer>
-    <p>📦 Envíos a CABA y opción de retiro en Caballito</p>
-    <p>🧾 Facturación A y B (incluye percepciones)</p>
-    <p>&copy; 2025 DistriGénesis</p>
+    <p>📦 Envíos a CABA llevando 4 bidones o más</p>
+    <p>📍 Retiro por Caballito zona Cid Campeador</p>
+    <p>🧾 Facturación C</p>
+    <p>&copy; 2025 Distribuidora Distrigenesis</p>
   </footer>
 
   <script>
-    // Función para mostrar/ocultar secciones
+    // Mostrar/ocultar secciones
     document.querySelectorAll('.btn-dorado').forEach(btn => {
       btn.addEventListener('click', () => {
         const target = btn.getAttribute('data-target');
@@ -196,7 +192,7 @@
         document.getElementById(target).classList.add('active');
       });
     });
-    // Botón volver
+    // Volver a la vista principal
     document.querySelectorAll('.back-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.detail-section').forEach(sec => sec.classList.remove('active'));

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distrigenesis - Productos Profesionales de Limpieza</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2A5C82;
+            --secondary: #5CA3A3;
+            --light: #F4F4F4;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+        }
+
+        .header {
+            background: var(--primary);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .products-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            background: white;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            object-fit: contain;
+            padding: 1rem;
+            background: var(--light);
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .price {
+            color: var(--primary);
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        .contact-section {
+            background: var(--light);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .contact-form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin: 0.5rem 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        button:hover {
+            background: #1a4561;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Distrigenesis</h1>
+        <p>Especialistas en productos profesionales para pisos</p>
+    </header>
+
+    <div class="products-container" id="products"></div>
+
+    <section class="contact-section">
+        <h2>Contacto</h2>
+        <form class="contact-form" action="https://formspree.io/f/xvojnzqw" method="POST">
+            <input type="text" name="name" placeholder="Tu nombre" required>
+            <input type="email" name="email" placeholder="Tu email" required>
+            <input type="tel" name="phone" placeholder="Tu teléfono">
+            <textarea name="message" rows="5" placeholder="Tu mensaje" required></textarea>
+            <button type="submit">Enviar consulta</button>
+        </form>
+    </section>
+
+    <script>
+        // Datos desde CSV (actualizar en GitHub)
+        fetch('productos.csv')
+            .then(response => response.text())
+            .then(data => {
+                const products = data.split('\n').slice(1).map(row => {
+                    const [id, nombre, descripcion, aplicacion, precio, imagen] = row.split(',');
+                    return { id, nombre, descripcion, aplicacion, precio, imagen };
+                });
+                
+                const container = document.getElementById('products');
+                products.forEach(product => {
+                    container.innerHTML += `
+                        <div class="product-card">
+                            <img src="img/${product.imagen}" alt="${product.nombre}" class="product-image">
+                            <div class="product-info">
+                                <h3>${product.nombre}</h3>
+                                <p>${product.descripcion}</p>
+                                <div class="price">$${product.precio}</div>
+                                <p><strong>Modo de aplicación:</strong> ${product.aplicacion}</p>
+                            </div>
+                        </div>
+                    `;
+                });
+            });
+    </script>
+</body>
+</html>

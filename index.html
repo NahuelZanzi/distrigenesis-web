@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Distribuidora Génesis</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -19,17 +20,6 @@
       justify-content: center;
       gap: 1rem;
       color: white;
-    }
-    .hero {
-      background: url('pisosellado1.jpeg') center/cover no-repeat;
-      height: 140px; /* reducido a la mitad */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 2rem;
-      font-weight: bold;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
     }
     .product-card {
       border: none;
@@ -53,8 +43,13 @@
       background-color: #002c5f;
       color: white;
       text-align: center;
-      padding: 1.2rem;
+      padding: 2rem 1rem;
       margin-top: 4rem;
+    }
+    .social-icons a {
+      color: white;
+      margin: 0 10px;
+      font-size: 1.5rem;
     }
     .detail-section {
       display: none;
@@ -71,6 +66,10 @@
     .back-btn {
       margin-bottom: 1rem;
     }
+    .contact-form {
+      max-width: 500px;
+      margin: 50px auto;
+    }
   </style>
 </head>
 <body>
@@ -78,10 +77,6 @@
   <header>
     <h1>Distribuidora Génesis</h1>
   </header>
-
-  <section class="hero">
-    <!-- Imagen reducida, sin texto -->
-  </section>
 
   <!-- Sección Principal -->
   <main id="main-view" class="container text-center my-5">
@@ -118,9 +113,26 @@
         </div>
       </div>
     </div>
+
+    <!-- Formulario de contacto -->
+    <section class="contact-form">
+      <h4>¿Querés más información?</h4>
+      <form action="https://formspree.io/f/mzzeoken" method="POST">
+        <div class="mb-3">
+          <input type="text" name="name" class="form-control" placeholder="Tu nombre" required>
+        </div>
+        <div class="mb-3">
+          <input type="email" name="email" class="form-control" placeholder="Tu email" required>
+        </div>
+        <div class="mb-3">
+          <textarea name="message" class="form-control" rows="4" placeholder="Escribí tu mensaje..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-dorado">Enviar</button>
+      </form>
+    </section>
   </main>
 
-  <!-- Sección Detalle: Beton -->
+  <!-- Detalles de Productos -->
   <section id="beton" class="detail-section container">
     <button class="btn btn-secondary back-btn">← Volver</button>
     <div class="row align-items-center">
@@ -139,7 +151,6 @@
     </div>
   </section>
 
-  <!-- Sección Detalle: Beton Pro -->
   <section id="beton-pro" class="detail-section container">
     <button class="btn btn-secondary back-btn">← Volver</button>
     <div class="row align-items-center">
@@ -158,7 +169,6 @@
     </div>
   </section>
 
-  <!-- Sección Detalle: PB28 -->
   <section id="pb28" class="detail-section container">
     <button class="btn btn-secondary back-btn">← Volver</button>
     <div class="row align-items-center">
@@ -179,7 +189,11 @@
 
   <footer>
     <p>📦 Envíos en CABA gratis por compras mayores a 4 bidones</p>
-    <p>🧾 Facturación A y B (incluye percepciones)</p>
+    <p>🧾 Factura C</p>
+    <div class="social-icons my-3">
+      <a href="https://wa.me/541133113773" target="_blank"><i class="bi bi-whatsapp"></i></a>
+      <a href="https://www.instagram.com/republicalimpieza/" target="_blank"><i class="bi bi-instagram"></i></a>
+    </div>
     <p>&copy; 2025 Distribuidora Génesis</p>
   </footer>
 

@@ -1,4 +1,184 @@
-<!-- (…todo tu código intacto arriba…) -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DistriGénesis</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f6f9;
+      color: #333;
+    }
+    header {
+      background-color: #002c5f;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      color: white;
+    }
+    header img { height: 55px; }
+    .hero {
+      background: url('pisosellado1.jpeg') center/cover no-repeat;
+      height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2rem;
+      font-weight: bold;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+    }
+    .product-card {
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    }
+    .btn-dorado {
+      background-color: #c9a227;
+      color: white;
+      border: none;
+    }
+    .btn-dorado:hover {
+      background-color: #b8921f;
+    }
+    footer {
+      background-color: #002c5f;
+      color: white;
+      text-align: center;
+      padding: 1.2rem;
+      margin-top: 4rem;
+    }
+    /* Secciones de detalle ocultas por defecto */
+    .detail-section {
+      display: none;
+      padding: 2rem 0;
+    }
+    .detail-section.active {
+      display: block;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .back-btn {
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logodistrigenesis.png" alt="Logo DistriGénesis">
+    <h1>DistriGénesis</h1>
+  </header>
+
+  <section class="hero">
+    Productos para el cuidado de tus pisos
+  </section>
+
+  <!-- Sección Principal -->
+  <main id="main-view" class="container text-center my-5">
+    <h2 class="mb-4">Productos Destacados</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-4 mb-4">
+        <div class="card product-card">
+          <img src="beton.jpeg" class="card-img-top" alt="Beton">
+          <div class="card-body">
+            <h5 class="card-title">Beton</h5>
+            <p class="card-text">Sellador base para pisos porosos.</p>
+            <button class="btn btn-dorado" data-target="beton">Ver más</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card product-card">
+          <img src="beton-etiqueta.jpg" class="card-img-top" alt="Beton Pro">
+          <div class="card-body">
+            <h5 class="card-title">Beton Pro</h5>
+            <p class="card-text">Versión mejorada con mayor cobertura.</p>
+            <button class="btn btn-dorado" data-target="beton-pro">Ver más</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card product-card">
+          <img src="PB28CERA.jpeg" class="card-img-top" alt="PB28">
+          <div class="card-body">
+            <h5 class="card-title">PB28</h5>
+            <p class="card-text">Cera de alto brillo y protección duradera.</p>
+            <button class="btn btn-dorado" data-target="pb28">Ver más</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Sección Detalle: Beton -->
+  <section id="beton" class="detail-section container">
+    <button class="btn btn-secondary back-btn">← Volver</button>
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <img src="beton.jpeg" class="img-fluid rounded" alt="Beton">
+      </div>
+      <div class="col-md-6 text-start">
+        <h2>Beton</h2>
+        <p>Beton es un sellador base diseñado para pisos porosos. Penetra en la superficie y crea una barrera resistente al agua y a manchas, ideal para interiores y exteriores.</p>
+        <ul>
+          <li><strong>Formato:</strong> 5L y 10L</li>
+          <li><strong>Rendimiento:</strong> 8–10 m²/L</li>
+          <li><strong>Aplicación:</strong> Rodillo o pistola airless</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Detalle: Beton Pro -->
+  <section id="beton-pro" class="detail-section container">
+    <button class="btn btn-secondary back-btn">← Volver</button>
+    <div class="row align-items-center">
+      <div class="col-md-6 order-md-2">
+        <img src="beton-etiqueta.jpg" class="img-fluid rounded" alt="Beton Pro">
+      </div>
+      <div class="col-md-6 text-start order-md-1">
+        <h2>Beton Pro</h2>
+        <p>Beton Pro es la versión premium de Beton, con mayor concentración de resina para una cobertura más amplia y duradera. Perfecto para proyectos profesionales.</p>
+        <ul>
+          <li><strong>Formato:</strong> 5L, 10L y 20L</li>
+          <li><strong>Rendimiento:</strong> 12–14 m²/L</li>
+          <li><strong>Aplicación:</strong> Pistola airless recomendada</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Detalle: PB28 -->
+  <section id="pb28" class="detail-section container">
+    <button class="btn btn-secondary back-btn">← Volver</button>
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <img src="PB28CERA.jpeg" class="img-fluid rounded" alt="PB28">
+      </div>
+      <div class="col-md-6 text-start">
+        <h2>PB28</h2>
+        <p>PB28 es una cera de alto brillo que protege y realza el color natural del piso. Su fórmula crea una capa resistente a la abrasión y fácil de limpiar.</p>
+        <ul>
+          <li><strong>Formato:</strong> 1L y 5L</li>
+          <li><strong>Brillo:</strong> 90+ GU</li>
+          <li><strong>Aplicación:</strong> Mopa o pulidora con almohadilla suave</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
   <footer>
     <p>📦 Envíos a CABA y opción de retiro en Caballito</p>
@@ -16,3 +196,26 @@
 
     <p style="margin-top: 10px;">&copy; 2025 DistriGénesis</p>
   </footer>
+
+
+  <script>
+    // Función para mostrar/ocultar secciones
+    document.querySelectorAll('.btn-dorado').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.getAttribute('data-target');
+        document.getElementById('main-view').style.display = 'none';
+        document.querySelectorAll('.detail-section').forEach(sec => sec.classList.remove('active'));
+        document.getElementById(target).classList.add('active');
+      });
+    });
+    // Botón volver
+    document.querySelectorAll('.back-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.detail-section').forEach(sec => sec.classList.remove('active'));
+        document.getElementById('main-view').style.display = 'block';
+      });
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

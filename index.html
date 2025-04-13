@@ -9,49 +9,53 @@
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: #f5f7fa;
-      color: #222;
+      background-color: #ffffff;
+      color: #000000;
     }
     header {
-      background-color: #003366;
-      padding: 0.7rem 1rem;
+      background-color: #000000;
+      padding: 0.5rem 1rem;
       display: flex;
       align-items: center;
-      gap: 0.8rem;
+      justify-content: flex-start;
       color: white;
     }
     header h1 {
       margin: 0;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
     }
-    .carousel-item img {
-      max-height: 350px;
-      object-fit: contain;
-      margin: 0 auto;
+    .product-card img {
+      max-height: 225px;
+      object-fit: cover;
     }
-    .product-carousel {
-      max-width: 900px;
-      margin: auto;
+    .product-card {
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .carousel-caption {
-      background: rgba(0,0,0,0.6);
-      border-radius: 8px;
-      padding: 1rem;
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
     }
     .btn-dorado {
-      background-color: #003366;
+      background-color: #002c5f;
       color: white;
       border: none;
     }
     .btn-dorado:hover {
-      background-color: #00509d;
+      background-color: #001a3c;
     }
     footer {
-      background-color: #003366;
+      background-color: #000000;
       color: white;
       text-align: center;
-      padding: 1.5rem;
-      margin-top: 3rem;
+      padding: 1.2rem;
+      margin-top: 4rem;
+    }
+    .carousel-inner img {
+      object-fit: cover;
+      height: 300px;
     }
     .whatsapp-popup {
       position: fixed;
@@ -68,6 +72,10 @@
       cursor: pointer;
       font-weight: 500;
       z-index: 999;
+      transition: transform 0.3s ease;
+    }
+    .whatsapp-popup:hover {
+      transform: scale(1.05);
     }
     .whatsapp-popup img {
       width: 24px;
@@ -76,62 +84,41 @@
   </style>
 </head>
 <body>
-
   <header>
     <h1>Distribuidora Génesis</h1>
   </header>
 
-  <!-- Carrusel de productos -->
-  <section class="product-carousel mt-5">
-    <div id="carouselProducts" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active text-center">
-          <img src="beton.jpeg" class="d-block w-75" alt="Beton">
-          <div class="carousel-caption">
-            <h5>Beton</h5>
-            <p>Sellador base para pisos porosos.</p>
-            <a href="https://link.mercadopago.com.ar/distrigenesis" class="btn btn-dorado">Comprar ahora</a>
-          </div>
-        </div>
-        <div class="carousel-item text-center">
-          <img src="PB28CERA.jpeg" class="d-block w-75" alt="PB28">
-          <div class="carousel-caption">
-            <h5>PB28</h5>
-            <p>Cera de alto brillo y protección duradera.</p>
-            <a href="https://link.mercadopago.com.ar/distrigenesis" class="btn btn-dorado">Comprar ahora</a>
+  <div id="carouselExampleIndicators" class="carousel slide container mt-5" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="card product-card">
+          <img src="beton.jpeg" class="card-img-top" alt="Beton">
+          <div class="card-body">
+            <h5 class="card-title">Beton</h5>
+            <p class="card-text">Sellador base para pisos porosos.</p>
+            <a href="#beton" class="btn btn-dorado">Ver más</a>
           </div>
         </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselProducts" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselProducts" data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
-      </button>
+      <div class="carousel-item">
+        <div class="card product-card">
+          <img src="PB28CERA.jpeg" class="card-img-top" alt="PB28">
+          <div class="card-body">
+            <h5 class="card-title">PB28</h5>
+            <p class="card-text">Cera de alto brillo y protección duradera.</p>
+            <a href="#pb28" class="btn btn-dorado">Ver más</a>
+          </div>
+        </div>
+      </div>
     </div>
-  </section>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </button>
+  </div>
 
-  <!-- Formulario de contacto -->
-  <section class="contact-form container my-5">
-    <h3 class="text-center mb-4">Contáctanos</h3>
-    <form action="https://formspree.io/f/mzzeoken" method="POST">
-      <div class="mb-3">
-        <label for="name" class="form-label">Nombre</label>
-        <input type="text" class="form-control" id="name" name="name" required>
-      </div>
-      <div class="mb-3">
-        <label for="email" class="form-label">Correo electrónico</label>
-        <input type="email" class="form-control" id="email" name="_replyto" required>
-      </div>
-      <div class="mb-3">
-        <label for="message" class="form-label">Mensaje</label>
-        <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
-      </div>
-      <button type="submit" class="btn btn-dorado w-100">Enviar</button>
-    </form>
-  </section>
-
-  <!-- WhatsApp Popup -->
   <a class="whatsapp-popup" href="https://wa.me/5491133113773" target="_blank">
     <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" alt="WhatsApp">
     Hace click para escribirnos al WhatsApp

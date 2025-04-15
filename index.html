@@ -17,18 +17,29 @@
       padding: 0.75rem 1rem;
       display: flex;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
     }
     header h1 {
       font-size: 1.4rem;
       margin: 0;
       color: #fff;
     }
+    .nav-links a {
+      color: #fff;
+      margin-left: 1rem;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
     .product-card {
       border: none;
       border-radius: 12px;
       box-shadow: 0 0 10px rgba(0,0,0,0.08);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
     }
     .product-card:hover {
       transform: translateY(-5px);
@@ -74,6 +85,7 @@
       height: auto;
       object-fit: cover;
       filter: brightness(1);
+      max-height: 200px;
     }
     .whatsapp-popup {
       position: fixed;
@@ -105,28 +117,34 @@
 
 <header>
   <h1>Distribuidora Génesis</h1>
+  <nav class="nav-links">
+    <a href="#inicio">Inicio</a>
+    <a href="#productos">Productos</a>
+    <a href="#consultas">Consultas</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
 </header>
 
-<main id="main-view" class="container text-center my-5">
-  <h2 class="mb-4">Nuestros Productos</h2>
+<main id="main-view" class="container text-center my-5" id="inicio">
+  <h2 class="mb-4" id="productos">Nuestros Productos</h2>
   <div class="row justify-content-center">
     <div class="col-md-4 mb-4">
-      <div class="card product-card">
+      <div class="card product-card" data-target="beton">
         <img src="beton.jpeg" class="card-img-top" alt="Beton">
         <div class="card-body">
           <h5 class="card-title">Beton</h5>
           <p class="card-text">Sellador base para pisos porosos.</p>
-          <button class="btn btn-vermas" data-target="beton">Ver más</button>
+          <button class="btn btn-vermas">Ver este producto</button>
         </div>
       </div>
     </div>
     <div class="col-md-4 mb-4">
-      <div class="card product-card">
+      <div class="card product-card" data-target="pb28">
         <img src="PB28CERA.jpeg" class="card-img-top" alt="PB28">
         <div class="card-body">
           <h5 class="card-title">PB28</h5>
           <p class="card-text">Cera de alto brillo y protección duradera.</p>
-          <button class="btn btn-vermas" data-target="pb28">Ver más</button>
+          <button class="btn btn-vermas">Ver este producto</button>
         </div>
       </div>
     </div>
@@ -171,6 +189,17 @@
   </div>
 </section>
 
+<section id="consultas" class="container my-5 text-center">
+  <h3>¿Tenés consultas?</h3>
+  <p>Podés escribirnos directamente por WhatsApp o Instagram. ¡Estamos para ayudarte!</p>
+</section>
+
+<section id="contacto" class="container my-5 text-center">
+  <h3>Contacto</h3>
+  <p>Email: distribuidoragenesis@gmail.com</p>
+  <p>Teléfono: +54 9 11 3311-3773</p>
+</section>
+
 <div class="whatsapp-popup" onclick="window.open('https://wa.me/5491133113773', '_blank')">
   <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" alt="WhatsApp">
   Hace click acá para escribirnos al WhatsApp
@@ -187,9 +216,9 @@
 </footer>
 
 <script>
-  document.querySelectorAll('.btn-vermas[data-target]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const t = btn.getAttribute('data-target');
+  document.querySelectorAll('.product-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const t = card.getAttribute('data-target');
       document.getElementById('main-view').style.display = 'none';
       document.querySelectorAll('.detail-section').forEach(s => s.classList.remove('active'));
       document.getElementById(t).classList.add('active');
